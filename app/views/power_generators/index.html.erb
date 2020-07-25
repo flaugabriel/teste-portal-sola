@@ -15,15 +15,14 @@
         <label class="form-check-label" for="advancedSearch">Pesquisa Avançada</label>
       </div>
       <%= sort_link(@q, :price) do %>
-        <strong>Melhor preço</strong>
+      <strong>Melhor preço</strong>
       <% end %>
       <%= sort_link(@q, :kwp) do %>
       <strong>KWP</strong>
-    <% end %>
+      <% end %>
     </div>
 
     <%= search_form_for @q, url: root_path do |f| %>
-
     <div class="simple-form">
       <div class="simple-form__input">
         <%= f.search_field :name_cont, class:'form-control form-control-lg', placeholder: 'o que procura?' %>
@@ -33,16 +32,18 @@
       </div>
     </div>
     <% end %>
-    <div class="advanced-form" style="display:none;">
-      <button class="btn btn-outline-primary btn-lg" id="open-modal-recomends">Recomendações?</button>
+    <div class="advanced-form " style="display:none;">
+      <button class="button btn-recomendations" id="open-modal-recomends">Recomendações ?</button>
     </div>
+    <a class="button btn-recomendations" id="clear-recomends" href="/">Limpa filtros</a>
   </div>
 
 
 
-  <div class="container">
+
+  <div class="container" id="listgenerators">
     <% @power_generators.each do |power_generator| %>
-    <div class="box card power_generator-card">
+    <div class="box card power_generator-card" id="product_<%= power_generator.id %>">
       <%= image_tag power_generator.image_url, class: 'power_generator-card__img' %>
       <div class="power_generator-card__body">
         <h2><%= power_generator.name.upcase %></h2>
@@ -50,11 +51,13 @@
           <%= number_to_currency(power_generator.price, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".") %>
         </p>
         <p><strong>Descrição: </strong><%= power_generator.description %></p>
+        <button onclick="openModal('<%= power_generator.id %>')" class="button btn-freight">Consulta frete</button>
       </div>
     </div>
     <% end %>
     <%= paginate @power_generators  %>
   </div>
 </div>
-
+<!-- modal form by search params for recomendations -->
 <%= render 'shared/recomends' %>
+<%= render 'shared/you_addres' %>

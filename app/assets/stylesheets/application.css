@@ -86,6 +86,8 @@ p.power_generator-card__price {
   
 }
 
+.button4 {border-radius: 12px;}
+
 .searcher__radio {
   display: flex;
   justify-content: space-between;
@@ -143,3 +145,15 @@ p.power_generator-card__price {
   color: #e96443;
 }
 
+.btn-freight{
+  background-color: #1bc5c5; /* Green */
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer; 
+}

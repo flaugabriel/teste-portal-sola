@@ -1,0 +1,5 @@
+current directory: /home/gabriel/Documentos/projetos/meus_projeto/testes/teste-portal-sola/vendor/cache/ruby/2.6.0/gems/http-parser-1.2.1/ext
+/home/gabriel/.rbenv/versions/2.6.3/bin/ruby -rrubygems /home/gabriel/Documentos/projetos/meus_projeto/testes/teste-portal-sola/vendor/cache/ruby/2.6.0/gems/rake-13.0.1/exe/rake RUBYARCHDIR\=/home/gabriel/Documentos/projetos/meus_projeto/testes/teste-portal-sola/vendor/cache/ruby/2.6.0/extensions/x86_64-linux/2.6.0/http-parser-1.2.1 RUBYLIBDIR\=/home/gabriel/Documentos/projetos/meus_projeto/testes/teste-portal-sola/vendor/cache/ruby/2.6.0/extensions/x86_64-linux/2.6.0/http-parser-1.2.1
+mkdir -p x86_64-linux/http-parser
+gcc -fexceptions -O -fno-omit-frame-pointer -fno-strict-aliasing -Wall -Wextra -O3 -fPIC   -o x86_64-linux/http-parser/http_parser.o -c ./http-parser/http_parser.c
+gcc -shared -o x86_64-linux/libhttp-parser-ext.so x86_64-linux/http-parser/http_parser.o -fexceptions 

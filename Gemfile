@@ -18,8 +18,10 @@ gem 'uglifier', '>= 1.3.0'
 gem "roo", "~> 2.8.0"
 #samples searchs and filters
 gem 'ransack'
-#paginação
+#paginator
 gem 'kaminari'
+#search by cep 
+gem 'correios-cep'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
