@@ -1,0 +1,15 @@
+current directory: /home/gabriel/Documentos/projetos/meus_projeto/testes/teste-portal-sola/vendor/cache/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+/home/gabriel/.rbenv/versions/2.6.3/bin/ruby -I /home/gabriel/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20200724-25730-1j0bvxc.rb extconf.rb
+creating Makefile
+
+current directory: /home/gabriel/Documentos/projetos/meus_projeto/testes/teste-portal-sola/vendor/cache/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /home/gabriel/Documentos/projetos/meus_projeto/testes/teste-portal-sola/vendor/cache/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+current directory: /home/gabriel/Documentos/projetos/meus_projeto/testes/teste-portal-sola/vendor/cache/ruby/2.6.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.so ./.gem.20200724-25730-3mexq

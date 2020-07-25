@@ -1,0 +1,19 @@
+sudo: false
+language: ruby
+cache: bundler
+rvm:
+  - 2.0
+  - 2.1
+  - 2.2
+  - 2.3
+  - 2.4
+  - ruby-head
+gemfile:
+  - gemfiles/pry_0.9.gemfile
+  - gemfiles/pry_0.10.gemfile
+  - gemfiles/pry_0.11.gemfile
+matrix:
+  fast_finish: true
+  allow_failures:
+    - gemfile: gemfiles/pry_0.11.gemfile
+    - rvm: ruby-head

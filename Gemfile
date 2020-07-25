@@ -19,6 +19,8 @@ gem "roo", "~> 2.8.0"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'better_errors'
+  gem 'better_errors-pry'
 end
 
 group :development do
