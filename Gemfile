@@ -16,6 +16,10 @@ source "https://rails-assets.org" do
 end
 gem 'uglifier', '>= 1.3.0'
 gem "roo", "~> 2.8.0"
+#samples searchs and filters
+gem 'ransack'
+#paginação
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
