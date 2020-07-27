@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class FreightService
+
+  # function for calculator cubage and render more informations to controller  freight
   def self.calculation_cubage(uf, generator_id)
     freight_tips = {}
     generator = PowerGenerator.find(generator_id.to_i)
