@@ -124,7 +124,7 @@ p.power_generator-card__price {
 
 .power_generator-card {
   height: 200px;
-  width: 720px;
+  width: 1000px;
   display: flex;
   flex-direction: row;
   margin-left: -60px;
