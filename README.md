@@ -6,6 +6,16 @@
 
 `$ bundle exec rails db:create db:migrate db:seed`
 
+#### Config database.yml 
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: 172.17.0.1 #put a ip of you host machine
+  port: 5432
+  username: root
+  password: root
+
 
 #### Infra estrutura 
 
