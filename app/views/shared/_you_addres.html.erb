@@ -1,26 +1,60 @@
 <div class="w3-container">
   <div id="id01" class="w3-modal">
     <div class="w3-modal-content w3-animate-top w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id01').style.display='none'" 
-        class="w3-button w3-display-topright">&times;</span>
+      <header class="w3-container w3-teal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright"
+          id="close">&times;</span>
         <h2>Consulta frete</h2>
       </header>
       <div class="w3-container">
-        <label for="">Seu CEP</label>
-        <input type="text" class="" id="cep">
-        <button class="button" id="calculate-freight">Calcular</button>
+        <div class="wrapper">
+          <div class="title">
+            Busca CEP
+          </div>
+          <div>
+            <label for="input-cep">Digite Seu CEP:</label>
+            <input type="text" id="input-cep">
+          </div>
+
+          <hr>
+
+          <div>
+            <label>Logradouro</label>
+            <input type="text" data-cep="logradouro">
+          </div>
+
+          <div>
+            <label>Bairro</label>
+            <input type="text" data-cep="bairro">
+          </div>
+
+          <div>
+            <label>Cidade</label>
+            <input type="text" data-cep="cidade" id="cidade">
+          </div>
+
+          <div>
+            <label>Estado</label>
+            <input type="text" data-cep="uf" id="uf">
+          </div>
+          <button class="button btn-calculate-freight" id="calculate-freight">Calcular peso cubagem</button>
+
+        </div>
+
       </div>
       <footer class="w3-container w3-teal">
-        <div style="display:none;">
-          <input id="generator_id" >
+        <div class="group">
+          <div style="display:none;">
+            <input id="generator_id">
+          </div>
+          <label for="">Produto:</label>
+          <input id="name" disabled>
+          <label for="">Preço:</label>
+          <input id="price" class="price" disabled>
+          <div id="cubage-show">
+          </div>
         </div>
-        <p>Produto: <input id="name"disabled>
-        </p>
-        <p>Preço: <input id="price"disabled>
-        </p>
       </footer>
     </div>
   </div>
 </div>
-        

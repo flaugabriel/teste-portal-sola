@@ -7,7 +7,7 @@ class PowerGeneratorsController < ApplicationController
   # action for render json by elements that no exist in recomendations
   def recomendations
     power_generators = RecomendsService.generator_recomends(params[:data])
-    if power_generators.class == Array 
+    if power_generators.class == Array
       render json: { recomendations: power_generators }
     else
       render :status => 404

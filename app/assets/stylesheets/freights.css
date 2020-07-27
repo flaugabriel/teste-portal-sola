@@ -1,0 +1,47 @@
+/* Put your css in here */
+
+.wrapper {
+  margin:30px auto;
+  padding:30px;
+  max-width:300px;
+  background:#eee;
+}
+
+.wrapper label {
+  display:block;
+}
+.wrapper input {
+  padding:4px;
+  border:0;
+  border:1px solid #ddd;
+  width:100%;
+}
+
+.title {
+  margin-bottom:15px;
+  text-align:center;
+  border-bottom:1px solid #ddd;
+  padding-bottom:15px;
+}
+.title a {
+  color:#666;
+  text-decoration:underline;
+}
+.title h3 {
+  margin:15px;
+  color:#369;
+}
+.title h3:before {
+  content: 'DEMO';
+  font-size:12px;
+  display:block;
+  color:#999;
+}
+
+.group{
+  padding: 7px;
+  margin-top: 0em;
+
+}
+
+label { display:block }

@@ -13,6 +13,7 @@
 //= require jquery
 //= require rails-ujs
 //= require turbolinks
+//= require plugins/jquery.cep.min
 //= require_tree .
 
 function ready(event) {

@@ -1,9 +1,10 @@
 class FreightsController < ApplicationController
   def find_cep_and_calculate
-    byebug
-    address = Correios::CEP::AddressFinder.get(params[:cep])
-    byebug
-    generator = PowerGenerator.find(params[:generator_id])
-    freight_find = Freight.where(state: address.state)
+    response = FreightService.calculation_cubage(params[:uf],params[:generator_id])
+    if response.class == Hash
+      render json: { response: response }
+    else
+      render json: { status: 401, msg: response }
+    end
   end
 end

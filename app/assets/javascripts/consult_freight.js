@@ -1,6 +1,16 @@
-$(document).ready(function () {});
+$(document).ready(function () {
+  $('#input-cep').cep();
+  $('#uf').change(function () {
+    $('.btn-calculate-freight').show()
+  });
+  $("#close").click(function () {
+    location.href = '/'
+  })
+});
 
 function openModal(product_id) {
+  $('.btn-calculate-freight').hide()
+  $('#cubage-show').hide()
   document.getElementById('id01').style.display = 'block'
   var modal = document.getElementById("modal-consult-freigth");
   var span = document.getElementsByClassName("close")[0];
@@ -32,27 +42,49 @@ function openModal(product_id) {
 }
 
 function show_product(generator) {
-  console.log(generator)
+  var price = generator.price;
+  var format_price = price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+
   $("#name").val(generator.name);
-  $("#price").val(generator.price);
+  $("#price").val(format_price);
   $("#generator_id").val(generator.id);
 }
 
 function calculate() {
-  var cep = $('#cep').val();
+  var uf = $('#uf').val();
   var generator_id = $('#generator_id').val();
   $.ajax({
     method: "post",
     url: "find_cep_and_calculate",
     data: {
-      cep: cep,
+      uf: uf,
       generator_id: generator_id
     },
     success: (function (res) {
-      filter_elements(res.recomendations);
+      show_cubagem(res.response);
     }),
     error: (function (msg) {
       alert('Nada encontrado referente aos parametros informados!');
     })
   });
+}
+
+function show_cubagem(cubagem) {
+  console.log(cubagem);
+  var cubage_text = "\
+  <form class='form-inline'></form>\
+  <label>Cubagem:</label> \
+  <input value='" + cubagem.cubage.toFixed(3)  + "' disabled>\
+  <label>Pesso minimo:</label>\
+  <input value='" + cubagem.weight_min + "' disabled>\
+  <label>Pesso maximo:</label> \
+  <input value='" + cubagem.weight_max + "' disabled>\
+  <label>Custo</label>\
+  <input value='" + cubagem.cost.toFixed(3)  + "' disabled>\
+  \
+  "
+  cubage_text = $.parseHTML(cubage_text);
+  $("#cubage-show").append(cubage_text);
+  $('#cubage-show').show()
+
 }

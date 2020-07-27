@@ -20,8 +20,6 @@ gem "roo", "~> 2.8.0"
 gem 'ransack'
 #paginator
 gem 'kaminari'
-#search by cep 
-gem 'correios-cep'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
