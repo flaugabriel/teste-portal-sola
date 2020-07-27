@@ -13,4 +13,3 @@ development:
 
 production:
   <<: *default
-  password: <%= ENV['PORTALSOLARDEVTEST_DATABASE_PASSWORD'] %>
