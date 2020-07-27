@@ -13,11 +13,14 @@
 * deploy na vultr.com
 * dcoker postgres config 
 sudo docker run -d \
---name=redis \
+--name=postgres \
+-v /etc/localtime:/etc/localtime:ro \
+-e POSTGRES_USER=root \
+-e POSTGRES_PASSWORD=root \
+-v /storage/pgdata:/var/lib/postgresql/data \
+-p 5432:5432 \
 --restart=always \
--v redis:/var/lib/redis/data \
--p 6379:6379 \
-redis:latest
+postgres
 
 
 
